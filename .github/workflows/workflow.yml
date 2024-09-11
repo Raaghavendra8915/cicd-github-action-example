@@ -1,11 +1,7 @@
 name: Main Branch
 
-on:
-  pull_request:
-    types:
-      - opened
-    branches: 
-      - 'releases/**'
+on: push
+  
 
 jobs:
 
