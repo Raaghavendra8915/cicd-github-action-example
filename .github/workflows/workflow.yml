@@ -44,19 +44,7 @@ jobs:
         uses: ashley-taylor/junit-report-annotations-action@master
         if: always()
         with:
-          access-token: ${{ secrets.GITHUB_TOKEN }}          
-      - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action/composite@v1
-        with:
-           files: target/surefire-reports/*.xml
-      - name: Katalon Report Uploader
-        uses: katalon-studio/report-uploader@v0.0.7.11
-        env:
-          EMAIL: ${{ secrets.KATALON_EMAIL }}
-          PASSWORD: ${{ secrets.KATALON_PWD }}
-          PROJECT_ID: 494065
-          TYPE: junit
-          REPORT_PATH: target/surefire-reports/     
+          access-token: ${{ secrets.GITHUB_TOKEN }}   
                 
   sonar:
     name: Inspect - Using Sonar
